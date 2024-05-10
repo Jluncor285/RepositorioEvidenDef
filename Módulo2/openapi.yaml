@@ -1,0 +1,144 @@
+openapi: 3.0.1
+info:
+  title: API de Gestión de Proyectos
+  version: 1.0.1
+paths:
+  /projects:
+    get:
+      summary: Obtiene todos los proyectos
+      responses:
+        200:
+          description: Lista de proyectos obtenida correctamente
+    post:
+      summary: Crea un nuevo proyecto
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ID:
+                  type: integer
+                description:
+                  type: string
+                language:
+                  type: string
+                open:
+                  type: boolean
+      responses:
+        201:
+          description: Proyecto creado correctamente
+
+  /projects/{projectId}:
+    get:
+      summary: Obtiene un proyecto por su ID
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Proyecto obtenido correctamente
+    
+    put:
+      summary:  proyecto
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ID:
+                  type: integer
+                description:
+                  type: string
+                language:
+                  type: string
+                open:
+                  type: boolean
+      responses:
+        200:
+          description: Proyecto actualizado correctamente
+    delete:
+      summary: Elimina un proyecto por su ID
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: integer
+      responses:
+        204:
+          description: Proyecto eliminado correctamente
+
+  /projects/{projectId}/code:
+    get:
+      summary: Obtiene el código del proyecto
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Código del proyecto obtenido correctamente
+
+  /projects/{projectId}/detail:
+    get:
+      summary: Obtiene los detalles del proyecto
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Detalles del proyecto obtenidos correctamente
+
+  /projects/{projectId}/user:
+    get:
+      summary: Obtiene los usuarios relacionados con el proyecto
+      parameters:
+        - in: path
+          name: projectId
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Usuarios relacionados con el proyecto obtenidos correctamente
+    /projects/{projectId}/phone:
+      get:
+      summary: Obtiene los numeros de los usuarios
+      parameters:
+      - in: path
+        name: projectId
+        required: true
+        schema:
+          type: integer
+          requestBody:
+          required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                value:
+                  type: integer
+                type:
+                  type: string
+      responses:
+        200:
+          description: Proyecto actualizado correctamente
