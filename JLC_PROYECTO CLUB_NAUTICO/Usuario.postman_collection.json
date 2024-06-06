@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "2580fc38-b36a-4c66-a658-79d5b4dcb2f2",
+		"name": "Usuario",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36014673"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/findAllUsuarios",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/saveUsuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/saveUsuario",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"saveUsuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/updateUsuario/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/updateUsuario/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"updateUsuario",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

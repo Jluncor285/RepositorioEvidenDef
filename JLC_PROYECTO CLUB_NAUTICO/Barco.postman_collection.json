@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "50f576be-d8e8-495e-8a4e-9d97ce30f197",
+		"name": "Barco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36014673"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/findAllBarcos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/findAllBarcos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"findAllBarcos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/saveBarco",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"matricula\": \"1999DLS\",\r\n        \"nombre\": \"El barco de Yisus\",\r\n        \"numamarre\": 666,\r\n        \"cuota\": 999.4,\r\n        \"socio\": \"3\"\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/saveBarco",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"saveBarco"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/updateBarco",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"matricula\": \"1999DLS\",\r\n        \"nombre\": \"El barco del Señor Luna\",\r\n        \"numamarre\": 666,\r\n        \"cuota\": 999.4,\r\n        \"socio\": \"3\"\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/updateBarco/1999DLS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"updateBarco",
+						"1999DLS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/deleteBarco",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n        \"matricula\": \"1999DLS\",\r\n        \"nombre\": \"El barco de Yisus\",\r\n        \"numamarre\": 666,\r\n        \"cuota\": 999.4,\r\n        \"socio\": \"3\"\r\n    }  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/deleteBarco/1999DLS",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"deleteBarco",
+						"1999DLS"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8082/deleteBarco",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"matricula\": \"1245ABC\",\r\n        \"nombre\": \"Mistterioso\",\r\n        \"numamarre\": 1,\r\n        \"cuota\": 199.99\r\n    }  ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/deleteBarco/7898JJJ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"deleteBarco",
+								"7898JJJ"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jun 2024 22:27:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Barco eliminado"
+				}
+			]
+		}
+	]
+}
